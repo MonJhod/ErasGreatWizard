@@ -16,11 +16,11 @@ const cron = require('node-cron');
 
 // OpenAI configuration
 const openai = new OpenAI( {
-    apiKey: process.env.OPENAI_API_KEY,
+    apiKey: process.env.OPENAI_API_KEY || '',
 });
 
 // Assistant ID
-const assistantId = 'asst_YNByKfetpGD0xBjXWvxB7fK1';
+const assistantId = process.env.ASSISTANT_ID || '';
 
 // In-memory storage for session and thread mapping (could be replaced with a database)
 const sessionThreads = {};
